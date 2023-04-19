@@ -8,6 +8,7 @@ module.exports = () => {
   app.set("port", process.env.PORT || config.get("server.port"));
 
   app.use(express.json());
+  app.use(cors());
 
   consign().then("data").then("controllers").then("routes").into(app);
 
